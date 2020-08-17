@@ -13,8 +13,10 @@
             <section>
 				<% for(let i = 0; i<rows.length; i++) { %> 
                 <article>
-                    <div>
-                        <h2><%= rows[i].title %></h2>                        
+                    <div class="title-wrap">
+                        <h2 class="title"><%= rows[i].title %></h2>                        
+                        <a href="/edit?id=<%=rows[i].id%>" class="edit"><i class="far fa-edit"></i></a>
+                        <a href="/delete" class="delete"><i class="far fa-trash-alt"></i></a>
                     </div>
                     <div class="main-text">
                         <p>

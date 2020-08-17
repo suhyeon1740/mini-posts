@@ -11,7 +11,13 @@ router.get("/", function (req, res, next) {
 })
 
 router.get("/write", (req, res) => {
-    res.render("write")
+    res.render("write", {
+        pageTitle: "New Post",
+        id: "",
+        title: "",
+        contents: "",
+        action: "/create",
+    })
 })
 
 router.post("/create", (req, res) => {
@@ -19,6 +25,28 @@ router.post("/create", (req, res) => {
         `INSERT INTO posts(title, contents) VALUES('${req.body.title}', '${req.body.contents}')`,
         function (err, rows) {
             if (err) throw err
+            res.redirect("/")
+        }
+    )
+})
+
+router.get("/edit", (req, res) => {
+    db.query(`SELECT * FROM posts WHERE id=${req.query.id}`, (err, rows) => {
+        if (err) throw err
+        res.render("write", {
+            pageTitle: "Edit Post",
+            id: rows[0].id,
+            title: rows[0].title,
+            contents: rows[0].contents,
+            action: "/edit",
+        })
+    })
+})
+
+router.post("/edit", (req, res) => {
+    db.query(
+        `UPDATE posts SET title='${req.body.title}', contents='${req.body.contents}' WHERE id=${req.body.id}`,
+        (err, rows) => {
             res.redirect("/")
         }
     )

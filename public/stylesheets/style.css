@@ -37,6 +37,27 @@ article {
     border-bottom: 1px solid #e4e4e4;
     padding: 20px 10px;
 }
+article:hover .edit,
+article:hover .delete {
+    display: inline-block;
+}
+.title-wrap {
+    display: flex;
+}
+.title-wrap > * {
+    cursor: pointer;
+}
+.title {
+    display: inline-block;
+}
+.edit,
+.delete {
+    display: none;
+    margin-right: 10px;
+}
+.edit {
+    margin-left: auto;
+}
 .main-text {
     padding: 20px 0;
 }

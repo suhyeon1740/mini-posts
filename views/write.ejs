@@ -4,21 +4,23 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
+        <title><%=pageTitle%></title>
         <link rel="stylesheet" href="/stylesheets/style.css" />
         <script src="https://kit.fontawesome.com/7fade9baad.js" crossorigin="anonymous"></script>
         <script src="/javascripts/write.js" async="defer"></script>
     </head>
     <body>
         <div class="wrap">
-            <form action="/create" method="POST">
+            <form action="<%=action%>" method="POST">
                 <nav>
                     <a href="/" class="back"><i class="fas fa-long-arrow-alt-left"></i></a>
-                    <h2>New Post</h2>
+                    <h2><%=pageTitle%></h2>
                     <button type="submit" class="share">Share</button>
                 </nav>
-                <input type="text" placeholder="title" name="title" />
-                <textarea name="contents" cols="30" rows="10" placeholder="contents"></textarea>
+                <input type="hidden" name="id" value="<%= id %> ">
+                <input type="text" placeholder="title" name="title" value="<%=title%>" />
+                <textarea name="contents" cols="30" rows="10" placeholder="contents">
+<%=contents%></textarea>
             </form>
         </div>
     </body>
