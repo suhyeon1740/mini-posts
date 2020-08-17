@@ -60,6 +60,7 @@ article:hover .delete {
 }
 .main-text {
     padding: 20px 0;
+    white-space: pre-line;
 }
 .like {
     cursor: pointer;

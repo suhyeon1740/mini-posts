@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>mini posts</title>
+        <title>Mini Posts</title>
         <link rel="stylesheet" href="/stylesheets/style.css" />
         <script src="https://kit.fontawesome.com/7fade9baad.js" crossorigin="anonymous"></script>
         <script src="/javascripts/index.js" async="defer"></script>
@@ -19,11 +19,7 @@
                         <a href="/edit?id=<%=rows[i].id%>" class="edit"><i class="far fa-edit"></i></a>
                         <a href="/delete?id=<%=rows[i].id%>" class="delete"><i class="far fa-trash-alt"></i></a>
                     </div>
-                    <div class="main-text">
-                        <p>
-                            <%= rows[i].contents %>
-                        </p>
-                    </div>                
+                    <pre class="main-text"><%= rows[i].contents %></pre>
                     <div data-id="<%= rows[i].id %>" class="like-wrap">                    
                         <% if(rows[i].like) { %>
                             <i class="fas fa-heart like filled"></i> 
