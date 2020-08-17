@@ -59,9 +59,9 @@ router.get("/delete", (req, res) => {
 })
 
 router.get("/like", (req, res) => {
-    const like = req.query.type == "increase" ? "`like` + 1" : "`like` - 1"
+    const like = req.query.type == "increase" ? "1" : "0"
     db.query(`UPDATE posts SET \`like\` = ${like} WHERE id = ${req.query.id}`, (err, rows) => {
-        res.redirect("/")
+        res.sendStatus(200)
     })
 })
 

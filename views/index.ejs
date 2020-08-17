@@ -4,6 +4,7 @@
         <title>mini posts</title>
         <link rel="stylesheet" href="/stylesheets/style.css" />
         <script src="https://kit.fontawesome.com/7fade9baad.js" crossorigin="anonymous"></script>
+        <script src="/javascripts/index.js" async="defer"></script>
     </head>
     <body>
         <div class="wrap">
@@ -23,12 +24,11 @@
                             <%= rows[i].contents %>
                         </p>
                     </div>                
-                    <div data-id="<%= rows[i].id %> ">                    
+                    <div data-id="<%= rows[i].id %>" class="like-wrap">                    
                         <% if(rows[i].like) { %>
-                            <a href="/like?id=<%= rows[i].id %>&type=decrease"><i class="fas fa-heart like filled"></i></a>
-                            <%= rows[i].like%>
+                            <i class="fas fa-heart like filled"></i> 
                         <%} else {%>
-                            <a href="/like?id=<%= rows[i].id %>&type=increase"><i class="far fa-heart like"></i></a>                            
+                            <i class="far fa-heart like"></i>
                         <% } %>     
                     </div>
 				</article>
