@@ -3,12 +3,13 @@
     <head>
         <title>mini posts</title>
         <link rel="stylesheet" href="/stylesheets/style.css" />
+        <script src="https://kit.fontawesome.com/7fade9baad.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="wrap">
-            <section>
-                <button><a href="/write">CREATE</a></button>
-            </section>
+            <nav>
+                <a href="/write" class="plus"><i class="fas fa-plus"></i></a>
+            </nav>
             <section>
 				<% for(let i = 0; i<rows.length; i++) { %> 
                 <article>
@@ -19,8 +20,10 @@
                         <p>
                             <%= rows[i].contents %>
                         </p>
-                    </div>
-                    <div class="like">like <%= rows[i].like%></div>
+                    </div>                
+                    <div class=""><i class="fas fa-heart like filled"></i>
+                    <!-- <i class="far fa-heart like"></i> -->
+                     <%= rows[i].like%></div>
 				</article>
 			<% } %>                 
             </section>

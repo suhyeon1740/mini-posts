@@ -6,14 +6,20 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>Document</title>
         <link rel="stylesheet" href="/stylesheets/style.css" />
+        <script src="https://kit.fontawesome.com/7fade9baad.js" crossorigin="anonymous"></script>
         <script src="/javascripts/write.js" async="defer"></script>
     </head>
     <body>
-        <form action="/create" method="POST">
-            <h1>create</h1>
-            <input type="text" placeholder="title" name="title" />
-            <textarea name="contents" id="" cols="30" rows="10"></textarea>
-            <input type="submit" />
-        </form>
+        <div class="wrap">
+            <form action="/create" method="POST">
+                <nav>
+                    <a href="/" class="back"><i class="fas fa-long-arrow-alt-left"></i></a>
+                    <h2>New Post</h2>
+                    <button type="submit" class="share">Share</button>
+                </nav>
+                <input type="text" placeholder="title" name="title" />
+                <textarea name="contents" cols="30" rows="10" placeholder="contents"></textarea>
+            </form>
+        </div>
     </body>
 </html>
