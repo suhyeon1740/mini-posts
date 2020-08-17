@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>mini posts</title>
+        <link rel="stylesheet" href="/stylesheets/style.css" />
+    </head>
+    <body>
+        <div class="wrap">
+            <section>
+                <button><a href="/write">CREATE</a></button>
+            </section>
+            <section>
+				<% for(let i = 0; i<rows.length; i++) { %> 
+                <article>
+                    <div>
+                        <h2><%= rows[i].title %></h2>                        
+                    </div>
+                    <div class="main-text">
+                        <p>
+                            <%= rows[i].contents %>
+                        </p>
+                    </div>
+                    <div class="like">like <%= rows[i].like%></div>
+				</article>
+			<% } %>                 
+            </section>
+        </div>
+    </body>
+</html>

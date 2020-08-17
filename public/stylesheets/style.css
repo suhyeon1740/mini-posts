@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.wrap {
+    width: 500px;
+    max-width: 500px;
+}
+article {
+    border-bottom: 1px solid #e4e4e4;
+    padding: 30px 10px;
+}
+.main-text {
+    padding: 20px 0;
+}
+form > *{
+  display: block;
+}
