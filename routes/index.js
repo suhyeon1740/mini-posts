@@ -52,4 +52,10 @@ router.post("/edit", (req, res) => {
     )
 })
 
+router.get("/delete", (req, res) => {
+    db.query(`DELETE FROM posts WHERE id = ${req.query.id}`, (err, rows) => {
+        res.redirect("/")
+    })
+})
+
 module.exports = router
