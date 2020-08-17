@@ -61,6 +61,9 @@ article:hover .delete {
 .main-text {
     padding: 20px 0;
 }
+.like {
+    cursor: pointer;
+}
 .like.filled {
     color: #ef4b59;
 }

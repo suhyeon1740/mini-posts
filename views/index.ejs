@@ -23,9 +23,14 @@
                             <%= rows[i].contents %>
                         </p>
                     </div>                
-                    <div class=""><i class="fas fa-heart like filled"></i>
-                    <!-- <i class="far fa-heart like"></i> -->
-                     <%= rows[i].like%></div>
+                    <div data-id="<%= rows[i].id %> ">                    
+                        <% if(rows[i].like) { %>
+                            <a href="/like?id=<%= rows[i].id %>&type=decrease"><i class="fas fa-heart like filled"></i></a>
+                            <%= rows[i].like%>
+                        <%} else {%>
+                            <a href="/like?id=<%= rows[i].id %>&type=increase"><i class="far fa-heart like"></i></a>                            
+                        <% } %>     
+                    </div>
 				</article>
 			<% } %>                 
             </section>
