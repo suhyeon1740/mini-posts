@@ -4,7 +4,7 @@ const db = require("../bin/db")
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-    db.query(`SELECT * FROM posts`, function (err, rows) {
+    db.query(`SELECT * FROM posts ORDER BY id DESC`, function (err, rows) {
         if (err) throw err
         res.render("index", { rows: rows })
     })
